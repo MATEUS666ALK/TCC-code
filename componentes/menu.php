@@ -1,7 +1,7 @@
 <nav class="white" role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo">
-        <img src="/img/logo.svg" alt="logo">
+      <i class="material-icons">settings</i>
         <?=APP_NAME?> 
     </a> 
       <!--<ul class="right hide-on-med-and-down">

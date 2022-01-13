@@ -1,2 +1,2 @@
 <?php
-const APP_NAME = 'SEGURANÇAMAX';
+const APP_NAME = 'SHIELDMAX';

@@ -19,7 +19,7 @@ $palavra_chave = $_SESSION['palavra_chave'] ?? '';
   </button>
     </form>
 
-    <div class="row">
+  <div class="row">
     <form class="col s12">
       <div class="row">
         <div class="input-field col s12">
@@ -27,23 +27,9 @@ $palavra_chave = $_SESSION['palavra_chave'] ?? '';
           <input id="icon_prefix" type="text" class="validate" readonly value="<?=$senha_gerada?>"> 
           <label for="icon_prefix">Senha Gerada</label>
         </div>
-        
       </div>
-    </form>
+  </div> 
   </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
- 
 <?PHP
 require_once __DIR__.'/componentes/rodape.php';
 ?>
