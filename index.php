@@ -12,7 +12,7 @@ $palavra_chave = $_SESSION['palavra_chave'] ?? '';
       <div class="row valign-wrapper">
 
         <div class=" col s1">
-          <a id="palavra-chave-btn" class="btn-floating btn-large <?= empty($senha_gerada) ? 'pulse' : 'green' ?>"><i class="material-icons">lightbulb_outline</i></a>
+          <a id="palavra-chave-btn" class="btn-floating btn-large <?= empty($senha_gerada) ? 'pulse' : 'red lighten-2 ' ?>"><i class="material-icons">lightbulb_outline</i></a>
         </div>
         <!-- Tap Target Structure -->
         <div class="tap-target teal" data-target="palavra-chave-btn">
