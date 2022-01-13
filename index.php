@@ -20,14 +20,20 @@ $palavra_chave = $_SESSION['palavra_chave'] ?? '';
   </button>
     </form>
   </div>
+  <?php
+  if(!empty($senha_gerada)){
+    
+  ?>
   <div class="row valign-wrapper">
-      
         <div class="input-field col s12">
           <i class="material-icons prefix">https</i>
           <input id="icon_prefix" type="text" class="validate" readonly value="<?=$senha_gerada?>"> 
           <label for="icon_prefix">Senha Gerada</label>
         </div>
   </div> 
+  <?php
+  }
+  ?>
   </main>
 <?PHP
 require_once __DIR__.'/componentes/rodape.php';
