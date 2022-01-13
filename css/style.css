@@ -57,6 +57,5 @@ footer.page-footer {
 @media only screen and (max-width : 500px) {
   #logo-container .logo-text {
     font-size: 1.4rem;
-    
   }
 }
