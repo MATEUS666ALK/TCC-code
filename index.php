@@ -22,15 +22,32 @@ $palavra_chave = $_SESSION['palavra_chave'] ?? '';
   </div>
   <?php
   if(!empty($senha_gerada)){
-    
+  
   ?>
   <div class="row valign-wrapper">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">https</i>
-          <input id="icon_prefix" type="text" class="validate" readonly value="<?=$senha_gerada?>"> 
-          <label for="icon_prefix">Senha Gerada</label>
+      <div class="col s1">
+        <a class="btn-floating btn-large pulse clipboard-btn" data-clipboard-target="#senha_gerada"><i class="material-icons">content_copy</i></a>
+      </div>
+        <div class="input-field col s11">
+          <!--<i class="material-icons prefix">content_copy</i>-->
+          <input id="senha_gerada" type="text" class="" readonly value="<?=$senha_gerada?>"> 
+          <label for="senha_gerada">Senha Gerada</label>
         </div>
   </div> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+    <script>
+      new ClipboardJS('.clipboard-btn');
+      const btn_copiar = document.querySelector('.clipboard-btn');
+      const btn_copiar_pulsar = document.querySelector('.clipboard-btn.pulse');
+      btn_copiar.addEventListener('click', function() {
+        M.toast({
+          html: 'Copiado para a Área de transferência!'
+        }, 3000);
+        btn_copiar_pulsar.classList.toggle('red');
+        btn_copiar_pulsar.classList.toggle('lighten-2');
+        btn_copiar_pulsar.classList.toggle('pulse');
+      });
+    </script>
   <?php
   }
   ?>
