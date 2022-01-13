@@ -2,7 +2,7 @@
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo">
       <i class="material-icons">settings</i>
-        <?=APP_NAME?> 
+        <span class="logo-text"> <?=APP_NAME?> </span>
     </a> 
       <!--<ul class="right hide-on-med-and-down">
         <li><a href="#">Navbar Link</a></li>
@@ -10,7 +10,7 @@
 
       <ul id="nav-mobile" class="sidenav">
         <li><a href="#">Navbar Link</a></li>
-      </ul>-->
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>-->
     </div>
   </nav>

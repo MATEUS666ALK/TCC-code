@@ -3,7 +3,7 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
+
 }
 nav ul a,
 nav .brand-logo {
@@ -53,4 +53,10 @@ p {
 
 footer.page-footer {
   margin: 0;
+}
+@media only screen and (max-width : 500px) {
+  #logo-container .logo-text {
+    font-size: 1.4rem;
+
+  }
 }
