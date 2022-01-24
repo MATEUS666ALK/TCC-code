@@ -7,7 +7,7 @@ $palavra_chave = $_SESSION['palavra_chave'] ?? '';
 ?>
 <main class="container">
   <div class="row valign-wrapper center-align">
-    <form action="gerar_senha.php" method="POST" class="col s12">
+    <form action="controllers/gerar_senha.php" method="POST" class="col s12">
 
       <div class="row valign-wrapper">
 
@@ -83,7 +83,7 @@ require_once __DIR__ . '/componentes/rodape.php';
     
     $('#limpar').on('click',
       function() {
-        document.location.href = '/limpar_sessao.php';
+        document.location.href = 'controllers/limpar_sessao.php';
       }
     );
   });
