@@ -45,7 +45,7 @@ $palavra_chave = $_SESSION['palavra_chave'] ?? '';
     <div class="col s12">  
     <div class="row valign-wrapper">
       <div class="col s3 l1">
-        <a class="btn-floating btn-large pulse clipboard-btn indigo lighten-1  data-clipboard-target="#senha_gerada"><i class="material-icons">content_copy</i></a>
+        <a class="btn-floating btn-large pulse clipboard-btn indigo lighten-1"  data-clipboard-target="#senha_gerada"><i class="material-icons">content_copy</i></a>
       </div>
       <div class="input-field col s9 l11">
         <!--<i class="material-icons prefix">content_copy</i>-->
