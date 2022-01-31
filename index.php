@@ -32,6 +32,9 @@ $palavra_chave = $_SESSION['palavra_chave'] ?? '';
       <button class="btn waves-effect waves-light green lighten-2" type="submit" name="action">Gerar Senha
         <i class="material-icons right">enhanced_encryption</i>
       </button>
+      <button id="limpar" class="btn  waves-effect waves-light red" type="reset" name="action">Limpar
+        <i class="material-icons right">delete</i>
+      </button>
     </form>
   </div>
   <?php
@@ -52,6 +55,7 @@ $palavra_chave = $_SESSION['palavra_chave'] ?? '';
     </div>
     </div> 
     </div>
+  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
     <script>
       new ClipboardJS('.clipboard-btn');
