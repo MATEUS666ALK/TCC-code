@@ -15,10 +15,10 @@ $palavra_chave = $_SESSION['palavra_chave'] ?? '';
           <a id="palavra-chave-btn" class="btn-floating btn-large <?= empty($senha_gerada) ? 'pulse' : 'red lighten-2 ' ?>"><i class="material-icons">lightbulb_outline</i></a>
         </div>
         <!-- Tap Target Structure -->
-        <div class="tap-target teal" data-target="palavra-chave-btn">
+        <div class="tap-target teal green lighten-3" data-target="palavra-chave-btn">
           <div class="tap-target-content Black-text">
             <h5><?=APP_NAME?></h5>
-            <p class="Black-text">Esta aplicação é destinada para gerar senhas fortes, por meio de uma frase simples </p>
+            <p class="Black-text ">Esta aplicação é destinada para gerar senhas fortes, por meio de uma frase simples </p>
             <p>Por favor insira a frase para ser lembrada, para gerar uma senha forte </p>
           </div>
         </div>
@@ -29,7 +29,7 @@ $palavra_chave = $_SESSION['palavra_chave'] ?? '';
           <label for="palavra-chave">palavra-chave</label>
         </div>
       </div>
-      <button class="btn waves-effect waves-light" type="submit" name="action">Gerar Senha
+      <button class="btn waves-effect waves-light green lighten-2" type="submit" name="action">Gerar Senha
         <i class="material-icons right">enhanced_encryption</i>
       </button>
     </form>
@@ -42,7 +42,7 @@ $palavra_chave = $_SESSION['palavra_chave'] ?? '';
     <div class="col s12">  
     <div class="row valign-wrapper">
       <div class="col s3 l1">
-        <a class="btn-floating btn-large pulse clipboard-btn" data-clipboard-target="#senha_gerada"><i class="material-icons">content_copy</i></a>
+        <a class="btn-floating btn-large pulse clipboard-btn indigo lighten-1  data-clipboard-target="#senha_gerada"><i class="material-icons">content_copy</i></a>
       </div>
       <div class="input-field col s9 l11">
         <!--<i class="material-icons prefix">content_copy</i>-->
