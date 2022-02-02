@@ -8,14 +8,14 @@ $palavra_chave = $_SESSION['palavra_chave'] ?? '';
 <main class="container">
   <div class="row valign-wrapper center-align">
     <form action="controllers/gerar_senha.php" method="POST" class="col s12">
-
+        
       <div class="row valign-wrapper">
 
         <div class=" col s3 l1">
           <a id="palavra-chave-btn" class="btn-floating btn-large <?= empty($senha_gerada) ? 'pulse' : 'red lighten-2 ' ?>"><i class="material-icons">lightbulb_outline</i></a>
         </div>
         <!-- Tap Target Structure -->
-        <div class="tap-target teal green lighten-3" data-target="palavra-chave-btn">
+        <div class="tap-target light-blue lighten-2" data-target="palavra-chave-btn">
           <div class="tap-target-content Black-text">
             <h5><?=APP_NAME?></h5>
             <p class="Black-text left-align">Esta aplicação é destinada para gerar senhas fortes, por meio de uma frase simples. <br>
@@ -35,6 +35,13 @@ $palavra_chave = $_SESSION['palavra_chave'] ?? '';
       <button id="limpar" class="btn  waves-effect waves-light red" type="reset" name="action">Limpar
         <i class="material-icons right">delete</i>
       </button>
+      <p>
+       <label>
+         <!-- class="filled-in" checked="checked"-->
+        <input type="checkbox" name="possui_caracteres_especiais"/>
+        <span>caracteres especiais?</span>
+       </label>
+       </p>
     </form>
   </div>
   <?php
