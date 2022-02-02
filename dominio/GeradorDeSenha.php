@@ -85,17 +85,20 @@ class GeradorDeSenha
      * RN08-Conter letras minúsculas 
      * RN10-Conter caracteres numéricos
      */
-    private function removerDadosPessoais() //função remover dados/acionar a função hash,com 64 caracteres
-    // de acordo com a norma RN04-Não conter dados pessoais e RN08-Conter letras minúsculas e RN10-Conter caracteres numéricos
+    private function removerDadosPessoais() 
     {  
         // "sha1", "sha256", "md5", "haval160, 4"       
         $SenhaParcial = hash('sha256', $this->palavraChave . APP_KEY);
         $this->setSenhaGerada($SenhaParcial);
         return $SenhaParcial;
     }
-    
-    private function substituirLetrasRepetidas()
-    // de acordo com a norma RN06-A senha gerada deve ser isenta de grupos exclusivos de caracteres numéricos(1278)e alfabéticos(wsbd) 
+
+     /**
+     * Função que susbistitui letras repetidas, utiliza um array xom caracteres a serem substituidos
+     * Regras de negócio implementadas:
+     * RN06-A senha gerada deve ser isenta de grupos exclusivos de caracteres numéricos(1278)e alfabéticos(wsbd)
+     */
+    private function substituirLetrasRepetidas() 
     {
         $listaDeCaracteresDaSenha = $this->listaDeCaracteresDaSenha; //chamada da variavel
         //$ultimo_caracter = ord("z"); chr(104);        
@@ -125,17 +128,20 @@ class GeradorDeSenha
             }            
         }
     }
-
+    /**
+     * Função que susbistitui numeros continuos, utiliza um array com caracteres a serem substituidos
+     * Regras de negócio implementadas:
+     * RN06-A senha gerada deve ser isenta de grupos exclusivos de caracteres numéricos(1278)e alfabéticos(wsbd)
+     */
     private function substituirNumerosContinuos($quantidade_maxima=2)
     {
-    // de acordo com a norma RN06-A senha gerada deve ser isenta de grupos exclusivos de caracteres numéricos(1278)e alfabéticos(wsbd)    
-        $listaDeCaracteresDaSenha = $this->listaDeCaracteresDaSenha;              
+                    
         $subtituicoes=['ø','£','×','Ø','ƒ','¢','¡','«','»','¦','¥','¤','ð','Ð','ß','µ','Þ','Þ','±','§','¶','æ','Æ'];   //caracteres da tabela ASCII     
         $contador_substituicao = 0;
         $quantidade_continuos = 0;
-        for($contador = 0; $contador < count($listaDeCaracteresDaSenha); $contador++)
+        for($indice = 0; $indice < count($this->listaDeCaracteresDaSenha); $indice++)
         {
-            $caracter = $listaDeCaracteresDaSenha[$contador];
+            $caracter = $this->listaDeCaracteresDaSenha[$indice];
 
             if($caracter >= '0' and $caracter <= '9'){
                 $quantidade_continuos++;
@@ -144,7 +150,7 @@ class GeradorDeSenha
                     if($contador_substituicao<count($subtituicoes))//Conta o número de elementos de uma variável, ou propriedades de um objeto
                     {
                         $novo_caracter = $subtituicoes[$contador_substituicao];
-                        $this->listaDeCaracteresDaSenha[$contador] = $novo_caracter;
+                        $this->listaDeCaracteresDaSenha[$indice] = $novo_caracter;
                         $contador_substituicao++;                        
                     }
                     $quantidade_continuos = 0;
