@@ -66,9 +66,9 @@ class GeradorDeSenha
     {
         
         $this->removerDadosPessoais(); 
-        $this->substituirLetrasRepetidas();
-        $this->substituirNumerosContinuos(); 
         $this->inserirCaracteresEspeciais(); 
+        $this->substituirLetrasRepetidas();
+        $this->substituirNumerosContinuos();  
         $this->inserirLetrasMaiusculas();           
         //RN05-Não conter caracteres contínuos(abc) ou idênticos(aaaa)
         //RN07-Conter letras maiúsculas
@@ -170,16 +170,19 @@ class GeradorDeSenha
      */
     private function inserirCaracteresEspeciais()
     {   
-        
+        $contador = 0;
         $caracteresEspeciais = [0,2,4,12,25,35,38,42,54,62];
         for($indice = 0; $indice < count($this->listaDeCaracteresDaSenha); $indice++)
         {
             
             $letra = $this->listaDeCaracteresDaSenha[$indice];
-            if(in_array($indice,$caracteresEspeciais)){
-             $this->listaDeCaracteresDaSenha[$indice] = $this->converterParaCaracterEspecial($letra);
-            }      
-         
+            if($letra >='0' and $letra<= '9')
+            {
+                if(in_array($contador,$caracteresEspeciais)){ 
+                    $this->listaDeCaracteresDaSenha[$indice] = $this->converterParaCaracterEspecial($letra);
+                   } 
+                   $contador++;     
+            }
         }
     }
 
