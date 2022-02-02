@@ -18,8 +18,8 @@ $palavra_chave = $_SESSION['palavra_chave'] ?? '';
         <div class="tap-target teal green lighten-3" data-target="palavra-chave-btn">
           <div class="tap-target-content Black-text">
             <h5><?=APP_NAME?></h5>
-            <p class="Black-text ">Esta aplicação é destinada para gerar senhas fortes, por meio de uma frase simples </p>
-            <p>Por favor insira a frase para ser lembrada, para gerar uma senha forte </p>
+            <p class="Black-text left-align">Esta aplicação é destinada para gerar senhas fortes, por meio de uma frase simples. <br>
+            <small> Por favor insira a frase para ser lembrada, para gerar uma senha forte</small></p>
           </div>
         </div>
 
