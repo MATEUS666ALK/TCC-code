@@ -32,7 +32,7 @@ $quantidade_caracteres = $_SESSION['quantidade_caracteres'] ?? '64';
         </div>
         <div class="input-field col s3">
           <!--<i class="material-icons prefix">content_copy</i>-->
-          <input id="quantidadeCaracteres" type="number" class="" name="quantidade_caracteres" value="<?= $quantidade_caracteres?>">
+          <input id="quantidadeCaracteres" type="number" class="" name="quantidade_caracteres" min="8" max="64" value="<?= $quantidade_caracteres?>">
           <label for="quantidadeCaracteres"> Quantidade Caracteres</label>
         </div>
       </div>
