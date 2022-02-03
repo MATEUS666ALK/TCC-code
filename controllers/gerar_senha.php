@@ -5,12 +5,12 @@ require_once __DIR__.'/../dominio/GeradorDeSenha.php';
 $palavra_chave = filter_input(INPUT_POST,'palavra-chave',FILTER_SANITIZE_STRING);
 //var_dump($_POST);
 //die();
-//$possui_caracteres_especiais = filter_input(INPUT_POST,'possui_caracteres_especiais',FILTER_SANITIZE_STRING);
+$quantidade_caracteres = filter_input(INPUT_POST,'quantidade_caracteres',FILTER_SANITIZE_NUMBER_INT);
 
 $gerador = new GeradorDeSenha($palavra_chave);
-$_SESSION['senha_gerada'] = $gerador->obter_senha();
+$senha_gerada = $gerador->obterSenha();
+$_SESSION['quantidade_caracteres'] = $quantidade_caracteres;
+$_SESSION['senha_gerada'] = substr($senha_gerada,0,$quantidade_caracteres);
 $_SESSION['palavra_chave'] = $palavra_chave;
 header('location: /');
 die();
-
-

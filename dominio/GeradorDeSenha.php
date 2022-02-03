@@ -1,6 +1,4 @@
 <?php
-//Use somente letras (a-z e A-Z), números (0-9) e caracteres especiais, como !@#$%^ *.() gogle não aceita todos os caracteres
-//hotmal não pode letras gregas, mais e menos, ç,simbolo de moedas
 namespace App\Models;
 
 require_once __DIR__ . '/../config.php';
@@ -65,9 +63,11 @@ class GeradorDeSenha
         $this->listaDeCaracteresDaSenha =  str_split($SenhaParcial); //Converte uma string para um array
     }
 
-    public function obter_senha() //função mãe, a qual é chamada, quando utilizamos a classe
+    public function obterSenha($padraoGoogleCaracteres = true) //função mãe, a qual é chamada, quando utilizamos a classe
     {
-
+        if($padraoGoogleCaracteres){
+            $this->popularTabelaConversaoPadraoGoogle();
+        }
         $this->removerDadosPessoais();
         $this->inserirCaracteresEspeciais();
         $this->substituirLetrasRepetidas();
@@ -210,5 +210,50 @@ class GeradorDeSenha
                 }
             }
         }
+    }
+    private function popularTabelaConversaoPadraoGoogle(){
+//Use somente letras (a-z e A-Z), números (0-9) e caracteres especiais, como !@#$%^ *.() gogle não aceita todos os caracteres
+//hotmal não pode letras gregas, mais e menos, ç,simbolo de moedas
+         $this->tabelaConversao = [
+            'a' => '!', 
+            'b' => '$',
+            'c' => '@',
+            'd' => '&',
+            'e' => '!',
+            'f' => '*',
+            'g' => '^',
+            'h' => '|',
+            'i' => '-',
+            'j' => '+',
+            'k' => '=',
+            'l' => '/',
+            'm' => '_',
+            'n' => '?',
+            'o' => '#',
+            'p' => '{',
+            'q' => '}',
+            'r' => '[',
+            's' => ']',
+            't' => '¬',
+            'u' => '¨',
+            'v' => ')',
+            'w' => '(',
+            'x' => '>',
+            'y' => '^',
+            'z' => '~',
+            '0' => '<',
+            '1' => ',',
+            '2' => '.',
+            '3' => ':',
+            '4' => ';',
+            '5' => '!',
+            '6' => '@',
+            '7' => '&',
+            '8' => '#',
+            '9' => '$',
+            //Sempre vai ter um erro a partir da 8/9 execução :Δ;γ;Θ;μ;Ω;Ψ;Ϛ
+        ];
+         $this->subtituicoesNumeros = ['ø', '£', '×', 'Ø', 'ƒ', '¢', '¡', '«', '»', '¦', '¥', '¤', 'ð', 'Ð', 'ß', 'µ', 'Þ', 'Þ', '±', '§', '¶', 'æ', 'Æ'];
+         $this->subtituicoesLetras = ['z', 'i', 'x', 'j', 'w', 'k', 'y', 'm', 'u', 'n', 'v', 'o', 's', 'p', 'r', 'q', 'l', 't', 'ñ', 'ç', 'é', 'ò', 'õ', 'ô', 'ã', 'à', 'á', 'â', 'ê', 'è', 'î', 'í', 'ì', 'ú', 'û', 'ù', 'ü', 'ï', 'ö', 'ä', 'ë', 'ÿ', 'å'];
     }
 }
