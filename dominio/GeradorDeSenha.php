@@ -206,7 +206,7 @@ class GeradorDeSenha
             if ($letra >= 'a' && $letra <= 'z') {
                 $contador++;
                 if (in_array($contador, $ocorrencias)) {
-                    $this->listaDeCaracteresDaSenha[$contador] = strtoupper($letra);
+                    $this->listaDeCaracteresDaSenha[$indice] = strtoupper($letra);
                 }
             }
         }
